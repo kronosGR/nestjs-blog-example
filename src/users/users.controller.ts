@@ -31,8 +31,7 @@ export class UsersController {
     @Query('page', new DefaultValuePipe(1), ParseIntPipe)
     page: number,
   ) {
-    console.log('Id:', getUsersParamDto);
-    return 'This action returns all users';
+    return this.usersService.findAll(getUsersParamDto, limit, page);
   }
 
   // @Get('/:id')
