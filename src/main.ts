@@ -9,6 +9,7 @@ async function bootstrap() {
     new ValidationPipe({
       whitelist: true,
       forbidNonWhitelisted: true, // throw on error on unauthorized properties
+      transform: true, // auto transform to DTO after validation
     }),
   );
   await app.listen(process.env.PORT ?? 3000);
